@@ -37,16 +37,12 @@
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+			<artifactId>junit-example</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/software.amazon.awscdk/s3-deployment -->
-		<dependency>
-			<groupId>software.amazon.awscdk</groupId>
-			<artifactId>s3-deployment</artifactId>
-			<version>1.88.0</version>
-		</dependency>
+
+
 
 		<!-- Spring and Transactions -->
 		<dependency>
@@ -164,6 +160,15 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>repsy</id>
+			<name>maven-repository1</name>
+			<url>https://panel.repsy.io/repo/maven/maven-repository1/artifacts</url>
+		</repository>
+	</distributionManagement>
+
 
 	<build>
 		<plugins>
