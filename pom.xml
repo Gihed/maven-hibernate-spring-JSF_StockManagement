@@ -163,9 +163,9 @@
 
 	<distributionManagement>
 		<repository>
-			<id>repsy</id>
-			<name>maven-repository1</name>
-			<url>https://panel.repsy.io/repo/maven/maven-repository1/artifacts</url>
+			<id>JMAVEN</id>
+			<name>myMavenProject</name>
+			<url>https://jihedbenkhalifa.jetbrains.space/p/jmaven</url>
 		</repository>
 	</distributionManagement>
 
