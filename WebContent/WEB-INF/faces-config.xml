@@ -11,4 +11,27 @@
         </el-resolver>
     </application>
     
+    <navigation-rule>
+        <from-view-id>/search.xhtml</from-view-id>
+        <navigation-case>
+            <to-view-id>/search.xhtml</to-view-id>
+<!--            <from-action>#{carService.searchCar(car)}</from-action>-->
+        </navigation-case>
+        <navigation-case>
+            <to-view-id>/car.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/addCar.xhtml</from-view-id>
+        <navigation-case>
+<!--            <from-action>/addCar.xhtml</from-action>-->
+            <to-view-id>/addCar.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <to-view-id>/car.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+
 </faces-config>

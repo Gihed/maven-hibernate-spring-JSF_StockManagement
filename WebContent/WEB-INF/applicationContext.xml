@@ -23,7 +23,7 @@
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<beans:property name="url"
 			value="jdbc:mysql://localhost:3306/cars" />
-		<beans:property name="username" value="jihed" />
+		<beans:property name="username" value="root" />
 		<beans:property name="password" value="jihed" />
 	</beans:bean>
 
@@ -33,7 +33,7 @@
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="annotatedClasses">
 			<beans:list>
-				<beans:value>com.journaldev.springhibernate.model.Person</beans:value>
+				<beans:value>com.polytech.springhibernate.entities.Car</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">
@@ -45,17 +45,22 @@
 		</beans:property>
 	</beans:bean>
 
-	<beans:bean id="personDAO"
-		class="com.journaldev.springhibernate.dao.PersonDAOImpl">
+	<beans:bean id="carDAO"
+		class="com.polytech.springhibernate.dao.CarDAOImpl">
 		<beans:property name="sessionFactory"
 			ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-	<beans:bean id="personService"
-		class="com.journaldev.springhibernate.service.PersonServiceImpl">
-		<beans:property name="personDAO" ref="personDAO"></beans:property>
+	<beans:bean id="carService"
+		class="com.polytech.springhibernate.service.CarServiceImpl">
+		<beans:property name="carDAO" ref="carDAO"></beans:property>
 	</beans:bean>
-	
-	<context:component-scan base-package="com.journaldev" />
+
+	<beans:bean id="carBean"
+				class="com.polytech.springhibernate.bean.CarBean">
+		<beans:property name="carService" ref="carService"></beans:property>
+	</beans:bean>
+
+	<context:component-scan base-package="com.polytech" />
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
