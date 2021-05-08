@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="JSF_Spring_Hibernate.war">
+    <root id="archive" name="jenkins-example.war">
       <element id="artifact" artifact-name="JSF_Spring_Hibernate:war exploded" />
     </root>
   </artifact>

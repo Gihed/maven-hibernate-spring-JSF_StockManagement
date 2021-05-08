@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+    <title>JSF Spring Hibernate StockManagement</title>
+    <style type="text/css">
+    </style>
+
+    <h:outputStylesheet library="webjars" name="bootstrap/3.3.6/css/bootstrap.min-jsf.css" />
+    <h:outputStylesheet library="webjars" name="bootstrap/3.3.6/css/bootstrap-theme.min-jsf.css" />
+    <h:outputStylesheet library="webjars" name="font-awesome/4.5.0/css/font-awesome.min-jsf.css" />
+</h:head>
+<h:body>
+    <div class="container text-center">
+
+        <br />
+        <h1 class="text-center" >List Cars </h1>
+        <br />
+        <br />
+
+
+        <h:form >
+        <table align="center">
+            <tr>
+                <td><label>Name </label></td>
+                <td><h:inputText id="name" value="#{car.name}"></h:inputText>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Model </label></td>
+                <td><h:inputText id="model" value="#{car.model}"></h:inputText>
+                </td>
+            </tr>
+
+            <tr >
+                <td colspan="2"><h:commandButton class="btn btn-success"
+                         action="#{carService.addCar(car)}" value="Add Car"></h:commandButton>
+                </td>
+            </tr>
+
+        </table>
+
+    </h:form>
+    <br />
+    <h3 class="text-center">Cars List</h3>
+        <br />
+    <c:if test="${!empty carService.listCars()}">
+        <table class="table table-condensed text-center">
+            <tr>
+                <th class="text-center">Car ID</th>
+                <th class="text-center">Car Name</th>
+                <th class="text-center">Car Model</th>
+            </tr>
+            <ui:repeat value="${carBean.listCars()}" var="car">
+                <tr>
+                    <td>${car.id}</td>
+                    <td>${car.name}</td>
+                    <td>${car.model}</td>
+                </tr>
+            </ui:repeat>
+        </table>
+    </c:if>
+        <br/>
+        <a href="#{request.contextPath}/car.xhtml">
+            <button class="btn btn-warning text-center" >Return to home page</button>
+        </a>
+    </div>
+
+</h:body>
+</html>

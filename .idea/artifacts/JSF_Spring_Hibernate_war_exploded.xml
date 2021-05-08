@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="JSF_Spring_Hibernate:war exploded">
-    <output-path>$PROJECT_DIR$/target/JSF_Spring_Hibernate</output-path>
+    <output-path>$PROJECT_DIR$/target/jenkins-example</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
@@ -52,10 +52,13 @@
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
           <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.1" />
           <element id="library" level="project" name="Maven: com.sun.el:el-ri:1.0" />
+          <element id="library" level="project" name="Maven: org.webjars:bootstrap:3.3.6" />
+          <element id="library" level="project" name="Maven: org.webjars:jquery:2.1.4" />
+          <element id="library" level="project" name="Maven: org.webjars:font-awesome:4.5.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/JSF_Spring_Hibernate/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/jenkins-example/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="JSF_Spring_Hibernate/web/Web" />
     </root>
